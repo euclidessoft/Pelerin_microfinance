@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock, ChevronRight, Facebook, Linkedin } from 'lucide-react';
 import { PAGES, type PageId, navigateTo } from '@/lib/navigation';
+import { SERVICES } from '@/lib/data';
 
 interface FooterProps {
   currentPage: PageId;
@@ -78,13 +79,18 @@ export default function Footer({ currentPage }: FooterProps) {
           {/* Services links */}
           <div>
             <h3 className="mb-5 font-serif text-base font-semibold text-white">Nos services</h3>
-            <ul className="space-y-3 text-sm text-primary-100/70">
-              <li className="transition-colors hover:text-white">Crédit de démarrage</li>
-              <li className="transition-colors hover:text-white">Épargne & placement</li>
-              <li className="transition-colors hover:text-white">Crédit agricole</li>
-              <li className="transition-colors hover:text-white">Crédit commercial</li>
-              <li className="transition-colors hover:text-white">Crédit habitat</li>
-              <li className="transition-colors hover:text-white">Crédit études</li>
+            <ul className="space-y-3">
+              {SERVICES.map((service) => (
+                <li key={service.title}>
+                  <button
+                    onClick={() => handleNav('services')}
+                    className="group flex items-center gap-2 text-left text-sm text-primary-100/70 transition-colors duration-200 hover:text-white"
+                  >
+                    <ChevronRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                    {service.title}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
