@@ -11,6 +11,19 @@ import {
   FileText,
   ShieldCheck,
   Wallet,
+  User,
+  Briefcase,
+  Building2,
+  IdCard,
+  Image,
+  MapPin,
+  Hash,
+  Coins,
+  FileBadge,
+  Receipt,
+  FileSignature,
+  Landmark,
+  Users,
 } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
 import { navigateTo } from '@/lib/navigation';
@@ -152,6 +165,151 @@ export default function ServicesPage() {
               <Clock className="h-6 w-6 text-primary-700" />
               <p className="text-sm font-medium text-primary-900">
                 Délai moyen d'obtention : <span className="font-bold">72 heures</span> après dépôt d'un dossier complet
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ===== ACCOUNT OPENING ===== */}
+      <section className="bg-white py-24">
+        <div className="container-app">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="section-label">Ouverture de compte</span>
+              <h2 className="heading-serif mt-5 text-3xl font-bold text-primary-900 sm:text-4xl">
+                Ouvrez votre compte chez Le Pèlerin
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-gray-600">
+                Les conditions varient selon votre profil (particulier, salarié ou entreprise). Bien que les politiques internes spécifiques de l'établissement puissent légèrement évoluer, les exigences standards en vigueur dans le secteur de la microfinance camerounaise s'appliquent.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+            {/* Particuliers / Commerçants */}
+            <Reveal>
+              <div className="group h-full rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 transition-colors duration-300 group-hover:bg-primary-700">
+                  <User className="h-7 w-7 text-primary-700 transition-colors duration-300 group-hover:text-white" />
+                </div>
+                <h3 className="mt-6 text-xl font-bold text-primary-900">Particuliers / Commerçants</h3>
+                <p className="mt-2 text-sm text-gray-500">Les pièces et conditions généralement requises</p>
+                <ul className="mt-6 space-y-4">
+                  <li className="flex items-start gap-3">
+                    <IdCard className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Pièce d'identité</span>
+                      <p className="text-sm text-gray-600">Photocopie de la CNI en cours de validité (ou passeport pour les étrangers).</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Image className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Photos</span>
+                      <p className="text-sm text-gray-600">2 photos d'identité récentes (format 4x4).</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Justificatif de domicile</span>
+                      <p className="text-sm text-gray-600">Plan de localisation signé ou facture ENEO / Camerounaise des Eaux récente.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Hash className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Numéro d'Identifiant Unique (NIU)</span>
+                      <p className="text-sm text-gray-600">Désormais obligatoire pour toute ouverture de compte financier au Cameroun.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Coins className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Dépôt initial</span>
+                      <p className="text-sm text-gray-600">Montant minimum à la création pour activer le compte (généralement à partir de 5 000 FCFA pour l'épargne).</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </Reveal>
+
+            {/* Salariés */}
+            <Reveal delay={120}>
+              <div className="group h-full rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 transition-colors duration-300 group-hover:bg-primary-700">
+                  <Briefcase className="h-7 w-7 text-primary-700 transition-colors duration-300 group-hover:text-white" />
+                </div>
+                <h3 className="mt-6 text-xl font-bold text-primary-900">Salariés</h3>
+                <p className="mt-2 text-sm text-gray-500">Fonds Communs / Domiciliation</p>
+                <p className="mt-4 text-sm text-gray-600">En plus des pièces pour particuliers, il faut fournir :</p>
+                <ul className="mt-4 space-y-4">
+                  <li className="flex items-start gap-3">
+                    <FileBadge className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Attestation de non-redevance</span>
+                      <p className="text-sm text-gray-600">Ou un engagement de votre employeur.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Receipt className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Bulletins de paie</span>
+                      <p className="text-sm text-gray-600">Les 3 derniers bulletins de paie.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <FileSignature className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Attestation de virement irrévocable (AVI)</span>
+                      <p className="text-sm text-gray-600">Signée par l'employeur pour la domiciliation du salaire.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </Reveal>
+
+            {/* Entreprises */}
+            <Reveal delay={240}>
+              <div className="group h-full rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 transition-colors duration-300 group-hover:bg-primary-700">
+                  <Building2 className="h-7 w-7 text-primary-700 transition-colors duration-300 group-hover:text-white" />
+                </div>
+                <h3 className="mt-6 text-xl font-bold text-primary-900">Entreprises</h3>
+                <p className="mt-2 text-sm text-gray-500">PME / GIC / Associations</p>
+                <ul className="mt-6 space-y-4">
+                  <li className="flex items-start gap-3">
+                    <Landmark className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Documents légaux</span>
+                      <p className="text-sm text-gray-600">Registre du Commerce et du Crédit Mobilier (RCCM), Statuts de l'entreprise, et carte de contribuable.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Users className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Dirigeants</span>
+                      <p className="text-sm text-gray-600">Pièces d'identité et photos des mandataires ou personnes habilitées à faire fonctionner le compte.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <FileText className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" />
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">Procès-verbal</span>
+                      <p className="text-sm text-gray-600">PV de l'assemblée générale nommant les dirigeants habilités à signer.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={300}>
+            <div className="mt-12 flex items-center justify-center gap-3 rounded-2xl bg-gold-50 p-6 text-center">
+              <ShieldCheck className="h-6 w-6 text-gold-700" />
+              <p className="text-sm font-medium text-primary-900">
+                Besoin d'aide pour constituer votre dossier ? <span className="font-bold">Nos conseillers en agence vous accompagnent gratuitement.</span>
               </p>
             </div>
           </Reveal>
