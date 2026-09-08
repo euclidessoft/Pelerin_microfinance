@@ -130,8 +130,8 @@ export default function HomePage() {
               <div className="relative">
                 <div className="overflow-hidden rounded-3xl shadow-2xl">
                   <img
-                    src={IMAGES.yaounde}
-                    alt="Yaoundé, Cameroun — siège de Le Pèlerin"
+                    src="https://images.pexels.com/photos/1422408/pexels-photo-1422408.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                    alt="Bâtiment moderne aux façades vitrées"
                     className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
